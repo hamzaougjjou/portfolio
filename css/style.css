@@ -1,0 +1,755 @@
+:root {
+    --main-red: #ca1b28;
+    --main-blue: #1e90ff;
+    --black-1: #111111;
+    --black-2: #1e1e1e;
+    --black-3: #181818;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Kanit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-weight: 400; */
+    color: white;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black-1);
+    color: white;
+}
+
+
+.mainContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* ===============================start header====================== */
+.mainContainer header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.mainContainer header .logoContainer img {
+    width: 40px;
+    height: 40px;
+}
+
+.mainContainer header .navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.mainContainer header .navContainer .mainNavItem {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.mainNavItem.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-red);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: navHoverEffect 1s;
+}
+
+@keyframes navHoverEffect {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* ===============================end header====================== */
+
+/* ===============================start hero section====================== */
+/* .mainContainer .heroContaner {
+
+} */
+
+.mainContainer .heroContaner .heroContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    min-height: 400px;
+    margin: 0 auto;
+}
+
+.mainContainer .heroContaner .heroContent .heroImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.mainContainer .heroContaner .heroContent .heroText {
+    width: 50%;
+}
+
+
+.mainContainer .heroContaner .heroContent .heroText>* {
+    margin-top: 15px;
+    line-height: 1.5em;
+}
+
+
+.mainContainer .heroContaner .heroContent .heroText>h3 {
+    color: var(--main-red);
+}
+
+.mainContainer .heroContaner .heroContent .heroText>h1 {
+    font-size: 25px;
+}
+
+.mainContainer .heroContaner .heroContent .heroText>.heroLink {
+    display: inline-block;
+    padding: 15px 25px 15px 25px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.9;
+    background-color: var(--main-red);
+    border-radius: 4px;
+}
+
+.mainContainer .heroContaner .heroContent .heroText>.heroLink:hover {
+    opacity: 1;
+}
+
+/* ===============================end hero section ====================== */
+
+
+/* ===============================START OF SERVCES section ====================== */
+
+.mainContainer .sevricesContainer {
+    min-height: 500px;
+    position: relative;
+    background-color: var(--black-2);
+}
+.mainContainer .sevricesContainer::before{
+    content: "";
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-blue);
+    right: 30%;
+    bottom: 0;
+}
+.mainContainer .sevricesContainer::after{
+    content: "";
+    width: 70%;
+    height: 2px;
+    position: absolute;
+    background-color: var(--main-blue);
+    right: 30%;
+}
+
+
+
+.mainContainer .sevricesContainer .rightSide {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    background-color: var(--black-1);
+}
+
+
+.mainContainer .sevricesContainer .servicesBody {
+    height: 100% !important;
+    width: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    padding: 10px;
+}
+
+.mainContainer .sevricesContainer .servicesTtile {
+    color: var(--main-red);
+    padding-top: 25px;
+}
+
+.mainContainer .sevricesContainer .sevricesContent {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* ++++++++++++service tem++++++++++++++++ */
+.mainContainer .sevricesContainer .sevricesContent .serviceItemCard {
+    width: 30%;
+    max-width: 300px;
+    min-width: 300px;
+    height: 350px;
+    background-color: var(--black-3);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.mainContainer .sevricesContainer .sevricesContent .serviceItemCard>* {
+    margin-bottom: 15px;
+}
+
+.mainContainer .sevricesContainer .sevricesContent .serviceItemCard img {
+    width: 50px;
+    height: 50px;
+}
+
+.mainContainer .sevricesContainer .sevricesContent .serviceItemCard h1 {
+    color: var(--main-red);
+    font-size: 25px;
+}
+
+.mainContainer .sevricesContainer .sevricesContent .serviceItemCard a {
+    color: var(--main-red);
+    font-style: italic;
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    align-items: center;
+    position: relative;
+}
+
+.mainContainer .sevricesContainer .sevricesContent .serviceItemCard a span {
+    color: var(--main-red);
+}
+
+.mainContainer .sevricesContainer .sevricesContent .serviceItemCard a svg {
+    fill: var(--main-red) !important;
+    font-size: 22px;
+    animation-name: hireMeIconAnimation;
+    margin-left: 0px;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hireMeIconAnimation {
+    from {
+        margin-left: 0px;
+    }
+
+    to {
+        margin-left: 15px;
+    }
+}
+
+.servicesFooter {
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 50px;
+}
+
+.servicesFooter .executesdProjectCountContainer {
+    width: 200px;
+    max-height: 120px;
+    border: 1px solid var(--main-red);
+    border-radius: 4px;
+    padding: 20px;
+    text-align-last: center;
+}
+
+.servicesFooter .executesdProjectCountContainer h1 {
+    color: var(--main-red);
+}
+
+.servicesFooter .executesdProjectDetails {
+    padding: 10px;
+    border: 1px solid var(--main-red);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.servicesFooter .executesdProjectDetails>div {
+    width: 100%;
+    min-height: 100px;
+    padding: 25px;
+    background-color: var(--black-3);
+}
+
+.servicesFooter .executesdProjectDetails>div>* {
+    padding-left: 30px;
+}
+
+.servicesFooter .executesdProjectDetails>div h2 {
+    color: var(--main-blue);
+    margin-bottom: 8px;
+    padding-left: 20px;
+}
+
+/* ===============================end OF SERVICES section ====================== */
+
+
+/* ===============================START OF ABOUT section ====================== */
+.aboutContainer{
+    padding: 20px;
+    padding-top: 30px;
+    min-height: 200px;
+    background-color: var(--black-1);
+    border: 2px solid  transparent;
+    border-bottom-color: var(--main-red);
+}
+.aboutContainer h1{
+    padding: 20px;
+    padding-bottom: 0;
+    padding-left: 0;
+    color: var(--main-red);
+}
+.aboutContainer > div {
+    padding: 20px;
+}
+.aboutContainer > div p{
+    line-height: 1.6em;
+    max-width: 90%;
+}
+.aboutContainer > div p a{
+    color: var(--main-blue);
+    font-size: 1.3em;
+    display: inline-block;
+    padding-left: 10px;
+    font-weight: bold;
+}
+/* ===============================END OF ABOUT section ====================== */
+
+
+/* ===============================Start Skills section ====================== */
+.skillsContainer {
+    min-height: 300px;
+    background-color: var(--black-3);
+    margin-top: 50px;
+    padding: 25px;
+}
+
+.skillsContainer h1 {
+    max-width: 1000px;
+    margin: auto;
+    color: var(--main-red);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.skillsContainer section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 50px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.skillbar {
+    position: relative;
+    display: block;
+    margin-bottom: 50px;
+    width: 100%;
+    background: #eee;
+    height: 10px;
+    border-radius: 4px;
+    transition: 0.4s linear;
+    border-radius: 5px;
+    transition-property: width, background-color;
+}
+
+.skillbar-bar {
+    height: 100%;
+    width: 0px;
+    background: var(--main-red);
+    background: linear-gradient(90deg, rgb(142, 255, 234), var(--main-blue));
+    border-radius: 5px;
+}
+
+
+/* ===============================end Skills section ====================== */
+
+/* ===============================START OF PROJECTS SECTION ====================== */
+.projectsContainer {
+    margin-top: 30px;
+
+    z-index: 99;
+}
+
+.projectsContainer header {
+    display: flex;
+}
+
+.projectsContainer header>div {
+    max-width: 430px;
+}
+
+.projectsContainer header>a {
+    color: var(--main-blue);
+}
+
+.projectsContainer .projectsContent {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    min-height: 200px;
+    margin-top: 30px;
+    gap: 40px;
+    place-items: center;
+}
+
+.projectsContainer .projectsContent .projectItem {
+    width: 450px;
+    max-width: 100%;
+    min-height: 400px;
+    background-color: var(--black-3);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.projectsContainer .projectsContent .projectItem .imageContainer {
+    text-align: center;
+}
+
+.projectsContainer .projectsContent .projectItem .imageContainer img {
+    width: 97%;
+    max-width: 97%;
+}
+
+.projectsContainer .projectsContent .projectItem>h1 {
+    padding: 15px 10px;
+    color: var(--main-blue);
+}
+
+.projectsContainer .projectsContent .projectItem>a {
+    padding: 15px 10px;
+    color: var(--main-red);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.projectsContainer .projectsContent .projectItem>a * {
+    color: var(--main-red);
+    fill: var(--main-red);
+}
+
+/* ===============================END OF PROJECTS SECTION ====================== */
+
+
+/* ===============================START OF EMPTY DIV SECTION ====================== */
+.emtyDiv {
+    width: 100%;
+    min-height: 20px;
+    position: relative;
+    z-index: -1;
+}
+
+.emtyDiv>div {
+    width: 100%;
+    min-height: 400px;
+    background-color: #ca1b28;
+    /* Center vertically and horizontally */
+    position: absolute;
+    position: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* ===============================END OF EMPTY DIV SECTION ====================== */
+
+
+/* ===============================START WORK OGETHER SECTION ====================== */
+.workTogetherContainer {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 300px;
+    padding: 25px;
+    background-color: var(--black-3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workTogetherContainer>div h1 {
+    max-width: 330px;
+}
+
+.workTogetherContainer>div p {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.workTogetherContainer>a {
+    display: inline-block;
+    padding: 15px 25px 15px 25px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.9;
+    background-color: var(--main-red);
+    border-radius: 2px;
+}
+
+/* ===============================END WORK OGETHER SECTION ====================== */
+
+/* ===============================START FOOTER SECTION ====================== */
+.mainFooter {
+    background-color: var(--black-2);
+    margin-top: 30px;
+}
+
+.mainFooter .footerContent {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.mainFooter .footerContent>.logoContainer img {
+    max-width: 50px;
+}
+
+.mainFooter .footerContent>nav {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainFooter .footerContent>nav a,
+.mainFooter .footerContent>nav a svg {
+    max-width: 45px;
+
+}
+
+
+/* ===============================END FOOTER SECTION ====================== */
+
+
+
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    --white: #afafaf;
+    --red: #e31b23;
+    --bodyColor: #292a2b;
+    --borderFormEls: hsl(0, 0%, 10%);
+    --bgFormEls: hsl(0, 0%, 14%);
+    --bgFormElsFocus: hsl(0, 7%, 20%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+a {
+    color: inherit;
+}
+
+input,
+select,
+textarea,
+button {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+
+select {
+    appearance: none;
+}
+
+/* Remove native arrow on IE */
+select::-ms-expand {
+    display: none;
+}
+
+/*Remove dotted outline from selected option on Firefox*/
+/*https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff/18853002#18853002*/
+/*We use !important to override the color set for the select on line 99*/
+select:-moz-focusring {
+    color: transparent !important;
+    text-shadow: 0 0 0 var(--white);
+}
+
+textarea {
+    resize: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font: 18px/1.5 "Open Sans", sans-serif;
+    background: var(--bodyColor);
+    color: var(--white);
+    margin: 1.5rem 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+/* FORM ELEMENTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form h1 {
+    margin-bottom: 1.5rem;
+}
+
+.my-form li,
+.my-form .grid>*:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.my-form select,
+.my-form input,
+.my-form textarea,
+.my-form button {
+    width: 100%;
+    line-height: 1.5;
+    padding: 15px 10px;
+    border: 1px solid var(--borderFormEls);
+    color: var(--white);
+    background: var(--bgFormEls);
+    transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+        transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.my-form textarea {
+    height: 170px;
+}
+
+.my-form ::placeholder {
+    color: inherit;
+    /*Fix opacity issue on Firefox*/
+    opacity: 1;
+}
+
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus {
+    transform: scale(1.02);
+}
+
+.my-form *:required,
+.my-form select {
+    background-repeat: no-repeat;
+    background-position: center right 12px;
+    background-size: 15px 15px;
+}
+
+.my-form *:required {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);
+}
+
+.my-form select {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/down.svg);
+}
+
+.my-form *:disabled {
+    cursor: default;
+    filter: blur(2px);
+}
+
+
+/* FORM BTNS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form .required-msg {
+    display: none;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg) no-repeat center left / 15px 15px;
+    padding-left: 20px;
+}
+
+.my-form .btn-grid {
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.2s;
+}
+
+.my-form button {
+    font-weight: bold;
+}
+
+.my-form button>* {
+    display: inline-block;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: 600px) {
+    .my-form .grid {
+        display: grid;
+        grid-gap: 1.5rem;
+    }
+
+    .my-form .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .my-form .grid-3 {
+        grid-template-columns: auto auto auto;
+        align-items: center;
+    }
+
+    .my-form .grid>*:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+}
+
+@media screen and (min-width: 541px) {
+    .my-form input[type="checkbox"]+label::before {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .my-form input[type="checkbox"]:checked+label::after {
+        top: 3px;
+    }
+}
